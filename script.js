@@ -1,3 +1,9 @@
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('guessButton').addEventListener('click', guessWords);
+    document.getElementById('clearButton').addEventListener('click', clearAll);
+    document.getElementById('wordLength').addEventListener('change', setLength);
+});
+
 class WordGuesser {
     constructor(wordList) {
         this.allWords = wordList;

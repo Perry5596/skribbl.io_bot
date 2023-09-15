@@ -1,0 +1,19 @@
+{
+    "manifest_version": 3,
+    "name": "Skribbl.io Assistant",
+    "version": "1.0",
+    "description": "Guess words based on patterns",
+    "permissions": ["activeTab"],
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+        "16": "icons/icon16.png",
+        "48": "icons/icon48.png"
+      }
+    },
+    "icons": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png"
+    }
+  }
+  

@@ -10,13 +10,13 @@
     <h2>Skribbl.io Assistant</h2>
     <div>
         <label for="wordLength">How many characters (including spaces)? </label>
-        <input type="number" id="wordLength" onchange="setLength()">
+        <input type="number" id="wordLength">
     </div>
     <div>
         <label for="pattern">Enter the known letters and spaces: </label>
         <input type="text" id="pattern">
-        <button onclick="guessWords()">Guess</button>
-        <button onclick="clearAll()">Clear</button>
+        <button id="guessButton">Guess</button>
+        <button id="clearButton">Clear</button>
     </div>
     <div id="results"></div>
 
