@@ -25,9 +25,18 @@ class WordGuesser:
     def filter_words(self, pattern):
         pattern = pattern.lower()
         new_possible_words = []
+
+        # Check if the pattern contains a space
+        contains_space = ' ' in pattern
+
         for word in self.possible_words:
-            if all(word[i] == pattern[i] or pattern[i] in ['_', ' '] for i in range(self.word_length)):
+            if contains_space and ' ' not in word:
+                continue
+            if not contains_space and ' ' in word:
+                continue
+            if all(word[i] == pattern[i] or pattern[i] == '_' for i in range(self.word_length)):
                 new_possible_words.append(word)
+
         self.possible_words = new_possible_words
 
     def start(self):
