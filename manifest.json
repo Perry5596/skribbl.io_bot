@@ -1,19 +1,38 @@
 {
-    "manifest_version": 3,
-    "name": "Skribbl.io Assistant",
-    "version": "1.0",
-    "description": "Guess words based on patterns",
-    "permissions": ["activeTab"],
-    "action": {
-      "default_popup": "popup.html",
-      "default_icon": {
-        "16": "icons/icon16.png",
-        "48": "icons/icon48.png"
-      }
-    },
-    "icons": {
-      "16": "icons/icon16.png",
-      "48": "icons/icon48.png"
+  "name": "Skribbl.io Assistant",
+  "description": "Gives you potential answers on skribbl.io",
+  "version": "1.0",
+  "manifest_version": 3,
+  "author": "Perry5596",
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "index.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://skribbl.io/*"
+      ],
+      "css": [
+        "style.css"
+      ],
+      "js": [
+        "content-script.js"
+      ]
     }
+  ],
+  "permissions": [
+    "activeTab",
+    "storage"
+  ],
+  "host_permissions": [
+    "https://wlauyeung.github.io/Skribblio-Word-Bank/*"
+  ],
+  "icons": {
+    "16": "images/icon16.png",
+    "32": "images/icon32.png",
+    "64": "images/icon64.png"
   }
-  
+}
